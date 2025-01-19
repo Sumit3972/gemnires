@@ -1,8 +1,12 @@
 import express from "express";
+import cors from "cors";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const app = express();
 app.use(express.json());
+
+// Enable CORS for all origins
+app.use(cors());
 
 // Initialize Google Generative AI with your API key from environment variables
 const apiKey = "AIzaSyA7Iddus8rx052UZm8thQL5Tfbx_wI3d0k";
@@ -80,4 +84,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-        
